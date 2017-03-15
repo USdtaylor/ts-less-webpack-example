@@ -1,0 +1,20 @@
+﻿{
+   "compilerOptions": {
+      "module": "commonjs",
+      "target": "es5",
+      "noImplicitAny": false,
+      "sourceMap": true,
+      "outDir": "dist",
+      "experimentalDecorators": true,
+      "typeRoots": [
+         "./node_modules/@types"
+      ]
+   },
+   "files": [
+       "app.ts",
+       "global.d.ts"
+   ],
+   "exclude": [
+      "node_modules"
+   ]
+}
