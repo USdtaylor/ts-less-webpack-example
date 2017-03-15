@@ -1,10 +1,12 @@
-﻿var webpack = require('webpack');
-var ExtractTextPlugin = require('extract-text-webpack-plugin');    
+﻿const webpack = require('webpack');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');   
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 
 module.exports = {
-   entry: ['./app.ts'],
+   entry: './app/app.ts',
    output: {
-      filename: "./dist/bundle.js"
+      filename: './dist/bundle.js'
    },
 
    resolve: {
@@ -14,7 +16,7 @@ module.exports = {
    module: {
       loaders: [{
             test: /\.tsx?$/,
-            loader: 'ts-loader'
+            loader: 'ts-loader',
          }, {
             test: /\.less$/, use: ExtractTextPlugin.extract({
                fallback: 'style-loader',
@@ -25,6 +27,15 @@ module.exports = {
    },
 
    plugins: [
-      new ExtractTextPlugin({ filename: 'bundle.css' })
+      new ExtractTextPlugin({ filename: './dist/bundle.css' }),
+      new UglifyJSPlugin({
+         mangle: false
+      }),
+      new CopyWebpackPlugin([{
+         from: '**/*.html',
+         to: 'dist'
+      }], {
+         ignore: ['node_modules/**/*', 'dist/**/*']
+      })
    ]
 }

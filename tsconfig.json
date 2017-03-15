@@ -4,15 +4,15 @@
       "target": "es5",
       "noImplicitAny": false,
       "sourceMap": true,
-      "outDir": "dist",
+      "outDir": "dist2",
       "experimentalDecorators": true,
       "typeRoots": [
          "./node_modules/@types"
       ]
    },
    "files": [
-       "app.ts",
-       "global.d.ts"
+       "app/app.ts",
+       "app/global.d.ts"
    ],
    "exclude": [
       "node_modules"

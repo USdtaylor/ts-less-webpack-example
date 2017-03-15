@@ -9,13 +9,16 @@
     "webpack": "^2.2.1"
   },
   "devDependencies": {
+    "copy-webpack-plugin": "^4.0.1",
     "css-loader": "^0.27.3",
     "extract-text-webpack-plugin": "^2.1.0",
     "less": "^2.7.2",
     "less-loader": "^3.0.0",
+    "parallel-webpack": "^1.6.1",
     "style-loader": "^0.14.0",
     "ts-loader": "^2.0.1",
     "typescript": "^2.2.1",
+    "uglifyjs-webpack-plugin": "^0.3.0",
     "webpack": "^2.2.1"
   },
   "scripts": {
